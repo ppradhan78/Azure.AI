@@ -7,6 +7,7 @@ namespace MicrosoftAzure.AI.Data.BusinessObject.OpenAI
         private readonly IConfigurationSettings _configuration;
         private readonly OpenAIClient _client;
         private ChatCompletionsOptions _options;
+        private const string SearchIndexName = "azureblob-index";
         #endregion
 
         public OpenAIServiceBO(IConfigurationSettings configuration)
@@ -54,7 +55,7 @@ namespace MicrosoftAzure.AI.Data.BusinessObject.OpenAI
                         new AzureCognitiveSearchChatExtensionConfiguration()
                         {
                             SearchEndpoint = new Uri(_configuration.SearchServiceUrl),
-                            IndexName = _configuration.SearchIndexName,
+                            IndexName = SearchIndexName,
                             SearchKey = new AzureKeyCredential(_configuration.SearchApiKey)
                         }
                     }

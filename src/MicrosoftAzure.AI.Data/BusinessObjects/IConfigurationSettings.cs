@@ -4,10 +4,8 @@
     {
         #region Search
         string SearchServiceName { get; }
-        string SearchIndexName { get; }
         string SearchApiKey { get; }
         string SearchServiceUrl { get; }
-        string SearchIndexerName { get; }
         #endregion
 
         #region AzureStorage

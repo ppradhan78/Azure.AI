@@ -9,6 +9,8 @@ namespace MicrosoftAzure.AI.Data.BusinessObject.AISearch
         #region Global Variable(s)
 
         private readonly IConfigurationSettings _configuration;
+        private const string SearchIndexName = "azureblob-index";
+        private const string SearchIndexerName = "azureblob-indexer";
         #endregion
 
         public AzureAIDocumentSearchServicesBO(IConfigurationSettings configuration)
@@ -25,7 +27,7 @@ namespace MicrosoftAzure.AI.Data.BusinessObject.AISearch
             try
             {
                 SearchServiceClient serviceClient = new SearchServiceClient(_configuration.SearchServiceName, new SearchCredentials(_configuration.SearchApiKey));
-                ISearchIndexClient indexClient = serviceClient.Indexes.GetClient(_configuration.SearchIndexName);
+                ISearchIndexClient indexClient = serviceClient.Indexes.GetClient(SearchIndexName);
                 SearchParameters parameters = new SearchParameters();
                 parameters.HighlightFields = new List<string> { "content" };
                 parameters.HighlightPreTag = "<br/>";
@@ -147,14 +149,14 @@ namespace MicrosoftAzure.AI.Data.BusinessObject.AISearch
                                     new Uri(_configuration.SearchServiceUrl),
                                     new AzureKeyCredential(_configuration.SearchApiKey));
 
-                Response indexerResponse = indexerClient.RunIndexer(_configuration.SearchIndexerName);
+                Response indexerResponse = indexerClient.RunIndexer(SearchIndexerName);
                 if (indexerResponse != null)
                 {
                     if (indexerResponse.Status == 202)
                     {
                         Thread.Sleep(50000);
 
-                        if (CheckIndexerStatus(indexerClient, _configuration.SearchIndexerName))
+                        if (CheckIndexerStatus(indexerClient, SearchIndexerName))
                         {
                             return true;
                         }

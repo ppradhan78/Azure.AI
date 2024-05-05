@@ -4,7 +4,7 @@ namespace MicrosoftAzure.AI.Data.Core.AISearch
 {
     public interface IAzureAICosmosSearchServicesCore
     {
-        Task<List< AzureAISearchModel>> Search(string search);
+        Task<List<AzureAICategorySearchModel>> Search(string search);
         bool RunAndCheckIndexer();
     }
 }

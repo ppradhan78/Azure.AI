@@ -1,9 +1,9 @@
 ﻿
-namespace ESGSurvey.API.ApiControllers.AISearch
+namespace MicrosoftAzure.AI.API.Controllers.AISearch
 {
     [Route("api/[controller]")]
     [ApiController]
-    [EnableCors]
+    //[EnableCors]
     public class AzureAIDocumentSearchServicesController : ControllerBase
     {
         #region Global Variable(s)

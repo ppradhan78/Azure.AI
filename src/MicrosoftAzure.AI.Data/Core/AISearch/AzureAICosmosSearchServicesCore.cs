@@ -19,7 +19,7 @@ namespace MicrosoftAzure.AI.Data.Core.AISearch
         }
         
         #region Public Method(s)
-        public Task<List<AzureAISearchModel>> Search(string search)
+        public Task<List<AzureAICategorySearchModel>> Search(string search)
         {
             if (!string.IsNullOrWhiteSpace(search))
             {

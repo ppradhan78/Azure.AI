@@ -17,4 +17,15 @@
         public string? Score { get; set; }
         public string? Language { get; set; }
     }
+    public class AzureAICategorySearchModel
+    {
+        public string? CategoryID { get; set; }
+        public string? CategoryName { get; set; }
+        public string? Description { get; set; }
+        public string? People { get; set; }
+        public string? Keyphrases { get; set; }
+        public string? Language { get; set; }
+        public string? HighlightedText { get; set; }
+
+    }
 }

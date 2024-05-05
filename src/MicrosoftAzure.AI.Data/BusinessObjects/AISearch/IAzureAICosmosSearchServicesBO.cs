@@ -2,7 +2,7 @@
 {
     public interface IAzureAICosmosSearchServicesBO
     {
-        Task<List<AzureAISearchModel>> Search(string searchText);
+        Task<List<AzureAICategorySearchModel>> Search(string searchText);
         bool RunAndCheckIndexer();
     }
 }
