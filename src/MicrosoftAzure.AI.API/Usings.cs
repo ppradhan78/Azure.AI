@@ -1,0 +1,11 @@
+global using Microsoft.AspNetCore.Cors;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.Azure.CognitiveServices.Vision.ComputerVision.Models;
+global using MicrosoftAzure.AI.Data.BusinessObject;
+global using MicrosoftAzure.AI.Data.Core.AISearch;
+global using MicrosoftAzure.AI.Data.Core.OpenAI;
+global using MicrosoftAzure.AI.Data.SimpleModels;
+global using Newtonsoft.Json;
+global using Newtonsoft.Json.Linq;
+global using System.Net.Http.Headers;
+global using System.Text;

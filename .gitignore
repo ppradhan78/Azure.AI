@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/.vs
+/src/MicrosoftAzure.AI.API/bin
+/src/MicrosoftAzure.AI.API/obj
+/src/MicrosoftAzure.AI.Data/bin
+/src/MicrosoftAzure.AI.Data/obj
+/test/MicrosoftAzure.AI.Test/bin/Debug/net6.0
+/test/MicrosoftAzure.AI.Test/obj

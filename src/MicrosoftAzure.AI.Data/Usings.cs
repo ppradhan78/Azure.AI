@@ -1,0 +1,12 @@
+global using Azure;
+global using Azure.AI.OpenAI;
+global using Azure.Search.Documents.Indexes;
+global using Azure.Search.Documents.Indexes.Models;
+global using MicrosoftAzure.AI.Data.BusinessObject;
+global using MicrosoftAzure.AI.Data.BusinessObject.OpenAI;
+global using MicrosoftAzure.AI.Data.Constants;
+global using MicrosoftAzure.AI.Data.SampleModel;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.AspNetCore.WebUtilities;
+global using Microsoft.Azure.Search;
+global using Microsoft.Azure.Search.Models;
