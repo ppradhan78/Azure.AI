@@ -2,6 +2,7 @@
 using MicrosoftAzure.AI.Data.BusinessObject.AISearch;
 using MicrosoftAzure.AI.Data.BusinessObject.OpenAI;
 using MicrosoftAzure.AI.Data.BusinessObjects.TextAnalysis;
+using MicrosoftAzure.AI.Data.Core.AISearch;
 using MicrosoftAzure.AI.Data.Core.TextAnalysis;
 
 namespace MicrosoftAzure.API.Extension
@@ -12,12 +13,17 @@ namespace MicrosoftAzure.API.Extension
         {
           
             Services.AddSingleton<IConfigurationSettings, ConfigurationSettings>();
-            Services.AddSingleton<ITextAnalysisCore, TextAnalysisCore>();
+
+            Services.AddTransient<ITextAnalysisCore, TextAnalysisCore>();
             Services.AddTransient<ITextAnalysisBo, TextAnalysisBo>();
-            Services.AddSingleton<IAzureAIDocumentSearchServicesCore, AzureAIDocumentSearchServicesCore>();
+            Services.AddTransient<IAzureAIDocumentSearchServicesCore, AzureAIDocumentSearchServicesCore>();
             Services.AddTransient<IAzureAIDocumentSearchServicesBO, AzureAIDocumentSearchServicesBO>();
-            Services.AddSingleton<IOpenAIServiceCore, OpenAIServiceCore>();
+            Services.AddTransient<IOpenAIServiceCore, OpenAIServiceCore>();
             Services.AddTransient<IOpenAIServiceBO, OpenAIServiceBO>();
+            Services.AddTransient<IAzureAICosmosSearchServicesCore, AzureAICosmosSearchServicesCore>();
+            Services.AddTransient<IAzureAICosmosSearchServicesBO, AzureAICosmosSearchServicesBO>();
+            Services.AddTransient<IAzureAISqlServerSearchServicesCore, AzureAISqlServerSearchServicesCore>();
+            Services.AddTransient<IAzureAISqlServerSearchServicesBO, AzureAISqlServerSearchServicesBO>();
             
             return Services;
         }
